@@ -25,7 +25,8 @@ import {
   Rocket,
   Award,
   Eye,
-  Database
+  Database,
+  Layout
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
@@ -55,7 +56,7 @@ const WhatsAppIcon = ({ size = 24, className = "" }: { size?: number, className?
 
 function Calculator() {
   const [leads, setLeads] = useState(50);
-  const [ticket, setTicket] = useState(500);
+  const [ticket, setTicket] = useState(250);
   const [conversion, setConversion] = useState(5);
 
   // Sem SDR Digital (60% de atendimento, conversão base)
@@ -104,12 +105,12 @@ function Calculator() {
               <span className="text-[12px] font-bold uppercase tracking-widest">Ticket Médio (R$)</span>
             </div>
             <input 
-              type="range" min="500" max="50000" step="500" value={ticket} 
+              type="range" min="250" max="50000" step="250" value={ticket} 
               onChange={(e) => setTicket(Number(e.target.value))}
               className="w-full accent-shark-accent bg-white/10 h-1.5 rounded-full appearance-none cursor-pointer"
             />
             <div className="flex justify-between items-center">
-              <span className="text-[11px] text-white/30 font-mono">R$500</span>
+              <span className="text-[11px] text-white/30 font-mono">R$250</span>
               <span className="text-3xl font-bold text-white font-mono">R$ {ticket.toLocaleString()}</span>
               <span className="text-[11px] text-white/30 font-mono">R$50k</span>
             </div>
@@ -536,6 +537,14 @@ export default function App() {
                 description: "Inteligência Artificial que qualifica leads 24/7 em tempo real.",
                 features: ["Atendimento Imediato", "Qualificação Automática", "Escala Ilimitada"],
                 id: "05"
+              },
+              { 
+                category: "Conversão",
+                title: "Páginas de Alta Performance", 
+                icon: Layout, 
+                description: "Landing Pages projetadas com engenharia de persuasão para transformar visitantes em clientes.",
+                features: ["Atração Magnética", "Engajamento Estratégico", "Desejo de Compra"],
+                id: "06"
               }
             ].map((item, i) => (
               <motion.div 
