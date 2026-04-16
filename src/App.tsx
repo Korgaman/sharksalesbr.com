@@ -26,9 +26,11 @@ import {
   Award,
   Eye,
   Database,
-  Layout
+  Layout,
+  Handshake
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { HeptagonDeliveries } from "./components/HeptagonDeliveries";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -489,95 +491,15 @@ export default function App() {
       </section>
 
       {/* Nossas Entregas */}
-      <section id="servicos" className="py-24">
+      <section id="servicos" className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="text-center mb-20">
+          <div className="text-center">
             <div className="section-divider mx-auto" />
             <h2 className="text-3xl md:text-5xl font-light uppercase tracking-tight text-white">Nossas Entregas</h2>
+            <p className="mt-4 text-white/40 font-light max-w-xl mx-auto uppercase tracking-widest text-[10px]">Estratégia Heptagonal de Domínio de Mercado</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { 
-                category: "Comercial",
-                title: "Mentorias Comerciais", 
-                icon: Users, 
-                description: "Diagnóstico de time, estruturação de jornada e scripts sob medida.",
-                features: ["Metodologia Prática", "Resultados Mensuráveis", "Previsibilidade"],
-                id: "01"
-              },
-              { 
-                category: "Marketing",
-                title: "Tráfego Pago", 
-                icon: TrendingUp, 
-                description: "Gestão de Meta, Google e YouTube Ads com foco em ROI.",
-                features: ["Criativos de Alta Conversão", "Dashboards em Tempo Real", "Otimização de CPL"],
-                id: "02"
-              },
-              { 
-                category: "Social Selling",
-                title: "Vitrine Digital", 
-                icon: Share2, 
-                description: "Gestão de perfil focada em autoridade e conversão estratégica.",
-                features: ["Roteiros de Stories", "Narrativas de Venda", "Design Profissional"],
-                id: "03"
-              },
-              { 
-                category: "CRM",
-                title: "Gestão de CRM", 
-                icon: Database, 
-                description: "Implementação e automação para rastreio total de oportunidades.",
-                features: ["Integração de Funil", "Automação de Follow-up", "Escalabilidade"],
-                id: "04"
-              },
-              { 
-                category: "IA",
-                title: "SDR Digital", 
-                icon: Zap, 
-                description: "Inteligência Artificial que qualifica leads 24/7 em tempo real.",
-                features: ["Atendimento Imediato", "Qualificação Automática", "Escala Ilimitada"],
-                id: "05"
-              },
-              { 
-                category: "Conversão",
-                title: "Páginas de Alta Performance", 
-                icon: Layout, 
-                description: "Landing Pages projetadas com engenharia de persuasão para transformar visitantes em clientes.",
-                features: ["Atração Magnética", "Engajamento Estratégico", "Desejo de Compra"],
-                id: "06"
-              }
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                {...fadeIn}
-                transition={{ delay: i * 0.1 }}
-                className="neon-blue-card p-8 group flex flex-col h-full hover:bg-shark-accent/[0.03] tech-border"
-              >
-                <div className="tech-corner-bl" />
-                <div className="flex justify-between items-start mb-6">
-                  <div className="w-10 h-10 flex items-center justify-center text-shark-accent/40 group-hover:text-shark-accent transition-all duration-700">
-                    <item.icon size={24} strokeWidth={1.5} />
-                  </div>
-                  <div className="text-right">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-shark-accent/60 block mb-1">{item.category}</span>
-                    <span className="text-[10px] font-mono text-white/20 tracking-widest uppercase">ID: {item.id}</span>
-                  </div>
-                </div>
-                
-                <h4 className="text-lg font-medium mb-4 uppercase tracking-tight text-white font-display">{item.title}</h4>
-                <p className="text-sm text-white/60 font-light leading-relaxed mb-6">{item.description}</p>
-                
-                <div className="space-y-3 mt-auto">
-                  {item.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
-                      <div className="w-1 h-1 rounded-full bg-shark-accent/40" />
-                      <span className="text-[11px] uppercase tracking-widest text-white/40 group-hover:text-white/70 transition-colors font-mono">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <HeptagonDeliveries />
         </div>
       </section>
 
