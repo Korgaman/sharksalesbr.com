@@ -25,8 +25,7 @@ import {
   Rocket,
   Award,
   Eye,
-  Database,
-  Layout
+  Database
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
@@ -539,11 +538,11 @@ export default function App() {
                 id: "05"
               },
               { 
-                category: "Conversão",
-                title: "Páginas de Alta Performance", 
-                icon: Layout, 
-                description: "Landing Pages projetadas com engenharia de persuasão para transformar visitantes em clientes.",
-                features: ["Atração Magnética", "Engajamento Estratégico", "Desejo de Compra"],
+                category: "Tech",
+                title: "Site de alta performance", 
+                icon: Rocket, 
+                description: "Desenvolvimento de landing pages e sites ultra-velozes focados em conversão.",
+                features: ["Carregamento Instantâneo", "SEO Avançado", "Design Responsivo"],
                 id: "06"
               }
             ].map((item, i) => (
