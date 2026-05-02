@@ -36,7 +36,7 @@ const fadeIn = {
   transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
 };
 
-const WHATSAPP_LINK = "https://wa.me/5511916138524?text=Ol%C3%A1!%20Vim%20do%20seu%20site%20e%20quero%20saber%20mais%20sobre%20a%20Shark.";
+const WHATSAPP_LINK = "https://wa.me/5511964505424?text=Ol%C3%A1!%20Vim%20do%20seu%20site%20e%20quero%20saber%20mais%20sobre%20a%20Shark.";
 const INSTAGRAM_LINK = "https://www.instagram.com/shark.salesbr/";
 const LINKEDIN_LINK = "https://www.linkedin.com/company/sharksalesbr";
 
@@ -245,10 +245,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      {/* High-Tech HUD Elements */}
-      <div className="scan-line" />
-      
-      {/* Corner Brackets / HUD */}
+      <header>
+        {/* High-Tech HUD Elements */}
+        <div className="scan-line" />
+        
+        {/* Corner Brackets / HUD */}
       <div className="fixed top-6 left-6 z-[60] pointer-events-none opacity-20 hidden lg:block">
         <div className="text-[8px] font-mono tracking-widest uppercase mb-1">System Status: Active</div>
         <div className="w-12 h-px bg-shark-accent" />
@@ -376,8 +377,11 @@ export default function App() {
         </AnimatePresence>
       </nav>
 
-      {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+      </header>
+
+      <main>
+        {/* Hero Section */}
+        <section ref={heroRef} className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <motion.div 
           style={{ y: heroY, opacity: heroOpacity }}
           className="relative z-20 max-w-7xl mx-auto px-8 lg:px-16 text-center"
@@ -765,33 +769,33 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contato / Formulário */}
-      <section id="contato" className="py-24 border-t border-white/[0.03]">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-32">
-            <motion.div {...fadeIn}>
-              <div className="section-divider" />
-              <h2 className="text-4xl md:text-6xl font-light mb-10 uppercase leading-[1.1] tracking-tighter text-white">
-                Seu negócio está prestes a sair do <span className="text-shark-accent font-medium">cardume.</span>
-              </h2>
-              <p className="text-lg text-white font-light mb-16 tracking-wide">
-                Preencha os dados abaixo. Nossa equipe de inteligência comercial entrará em contato em até 3 dias úteis.
-              </p>
-              <div className="space-y-10">
-                <div className="flex items-center gap-8 group">
-                  <div className="w-12 h-12 bg-white/[0.02] flex items-center justify-center group-hover:bg-shark-accent/10 transition-colors">
-                    <Instagram size={20} className="text-white group-hover:text-shark-accent" />
+        {/* Contato / Formulário */}
+        <section id="contato" className="py-24 border-t border-white/[0.03]">
+          <div className="max-w-7xl mx-auto px-8 lg:px-16">
+            <div className="grid lg:grid-cols-2 gap-32">
+              <motion.div {...fadeIn}>
+                <div className="section-divider" />
+                <h2 className="text-4xl md:text-6xl font-light mb-10 uppercase leading-[1.1] tracking-tighter text-white">
+                  Seu negócio está prestes a sair do <span className="text-shark-accent font-medium">cardume.</span>
+                </h2>
+                <p className="text-lg text-white font-light mb-16 tracking-wide">
+                  Preencha os dados abaixo. Nossa equipe de inteligência comercial entrará em contato em até 3 dias úteis.
+                </p>
+                <div className="space-y-10">
+                  <div className="flex items-center gap-8 group">
+                    <div className="w-12 h-12 bg-white/[0.02] flex items-center justify-center group-hover:bg-shark-accent/10 transition-colors">
+                      <Instagram size={20} className="text-white group-hover:text-shark-accent" />
+                    </div>
+                    <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" className="text-xs font-medium tracking-widest uppercase text-white hover:text-white transition-colors" aria-label="Acesse nosso Instagram">@shark.salesbr</a>
                   </div>
-                  <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" className="text-xs font-medium tracking-widest uppercase text-white hover:text-white transition-colors">@shark.salesbr</a>
-                </div>
-                <div className="flex items-center gap-8 group">
-                  <div className="w-12 h-12 bg-white/[0.02] flex items-center justify-center group-hover:bg-shark-accent/10 transition-colors">
-                    <Linkedin size={20} className="text-white group-hover:text-shark-accent" />
+                  <div className="flex items-center gap-8 group">
+                    <div className="w-12 h-12 bg-white/[0.02] flex items-center justify-center group-hover:bg-shark-accent/10 transition-colors">
+                      <Linkedin size={20} className="text-white group-hover:text-shark-accent" />
+                    </div>
+                    <a href={LINKEDIN_LINK} target="_blank" rel="noopener noreferrer" className="text-xs font-medium tracking-widest uppercase text-white hover:text-white transition-colors" aria-label="Acesse nosso LinkedIn">Shark Sales</a>
                   </div>
-                  <a href={LINKEDIN_LINK} target="_blank" rel="noopener noreferrer" className="text-xs font-medium tracking-widest uppercase text-white hover:text-white transition-colors">Shark Sales</a>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
             <motion.div 
               {...fadeIn}
@@ -829,6 +833,8 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      </main>
 
       {/* Footer */}
       <footer className="py-16 border-t border-white/[0.03] bg-black/40 backdrop-blur-md">
